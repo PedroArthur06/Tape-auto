@@ -1,3 +1,5 @@
+import heroBg from '@/assets/img-hero.png'
+
 export default function HeroSection() {
   const waMessage = encodeURIComponent(
     'Olá! Vi o site e gostaria de solicitar um orçamento. Já sei que o atendimento é por agendamento e gostaria de ver as datas disponíveis para o serviço de '
@@ -8,16 +10,16 @@ export default function HeroSection() {
       id="inicio"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
       style={{
-        backgroundImage: `url('https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=1920&q=80')`,
+        backgroundImage: `url(${heroBg})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',
       }}
     >
       {/* Overlays */}
-      <div className="absolute inset-0 bg-black/65" />
+      <div className="absolute inset-0 bg-black/40" />
       <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-r from-brand-black/60 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-brand-black/30 via-transparent to-transparent" />
 
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 pt-32 pb-20 flex flex-col items-start">
