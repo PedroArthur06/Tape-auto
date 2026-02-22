@@ -8,12 +8,9 @@ export default function HeroSection() {
   return (
     <section
       id="inicio"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-cover bg-center md:bg-fixed"
       style={{
         backgroundImage: `url(${heroBg})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed',
       }}
     >
       {/* Overlays */}
@@ -41,7 +38,7 @@ export default function HeroSection() {
 
         <div className="flex flex-col sm:flex-row gap-4 animate-slide-up" style={{ animationDelay: '0.3s' }}>
           <a
-            href={`https://wa.me/5565999999999?text=${waMessage}`}
+            href={`https://wa.me/556599317888?text=${waMessage}`}
             target="_blank"
             rel="noopener noreferrer"
             className="group flex items-center gap-3 bg-brand-orange hover:bg-brand-orange-dark text-white font-bold text-base px-8 py-4 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-orange-500/40"
@@ -67,7 +64,7 @@ export default function HeroSection() {
         {/* Stats bar */}
         <div className="mt-16 flex flex-wrap gap-8 animate-fade-in" style={{ animationDelay: '0.5s' }}>
           {[
-            { value: '15+', label: 'Anos de experiência' },
+            { value: '30+', label: 'Anos de experiência' },
             { value: '5.000+', label: 'Veículos transformados' },
             { value: '100%', label: 'Acabamento de fábrica' },
           ].map((s) => (

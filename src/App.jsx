@@ -1,4 +1,3 @@
-import TopBar from './components/TopBar'
 import Navbar from './components/Navbar'
 import HeroSection from './components/HeroSection'
 import ServicesGallery from './components/ServicesGallery'
@@ -12,7 +11,6 @@ import WhatsAppFAB from './components/WhatsAppFAB'
 function App() {
   return (
     <div className="font-inter bg-brand-black min-h-screen">
-      <TopBar />
       <Navbar />
       <HeroSection />
       <ServicesGallery />

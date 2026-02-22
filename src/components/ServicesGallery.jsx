@@ -134,15 +134,14 @@ export default function ServicesGallery() {
         </div>
 
         <div className="group relative overflow-hidden rounded-2xl border border-brand-orange/30 hover:border-brand-orange/60 transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/15 bg-brand-graphite">
-          <div className="flex flex-col md:flex-row md:h-72">
+          <div className="flex flex-col md:flex-row h-auto">
             {/* Image — left on desktop, top on mobile */}
-            <div className="relative md:w-2/5 h-40 sm:h-48 md:h-full overflow-hidden flex-shrink-0">
+            <div className="relative md:w-1/3 h-56 sm:h-64 md:h-auto overflow-hidden flex-shrink-0">
               <img
                 src={featuredService.image}
                 alt={featuredService.title}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-brand-graphite via-brand-graphite/20 to-transparent" />
 
               {/* Premium badge */}
               <div className="absolute top-3 left-3 flex items-center gap-2 bg-brand-orange px-2.5 py-1 rounded-full">

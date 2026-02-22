@@ -1,3 +1,5 @@
+import vemDeFora from '@/assets/vem-de-fora.png'
+
 export default function OutOfTownSection() {
   const waMsg = encodeURIComponent(
     'Olá! Vim do interior e gostaria de planejar minha visita. Gostaria de verificar a disponibilidade para o serviço de '
@@ -14,15 +16,13 @@ export default function OutOfTownSection() {
             {/* Image side */}
             <div className="relative h-64 md:h-auto min-h-[320px] overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=80"
-                alt="Rodovia Mato Grosso"
+                src={vemDeFora}
+                alt="Tapeçauto atende clientes de todo o MT"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent to-brand-graphite md:block hidden" />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-graphite to-transparent md:hidden block" />
 
               {/* Badge */}
-              <div className="absolute top-6 left-6 flex items-center gap-2 bg-brand-black/80 backdrop-blur-sm px-4 py-2 rounded-full">
+              <div className="absolute top-auto md:top-6 bottom-6 md:bottom-auto left-6 flex items-center gap-2 bg-brand-black/80 backdrop-blur-sm px-4 py-2 rounded-full">
                 <span className="w-2 h-2 rounded-full bg-brand-orange animate-pulse" />
                 <span className="text-white text-xs font-semibold">Atendemos todo o MT</span>
               </div>

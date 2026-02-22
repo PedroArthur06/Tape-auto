@@ -1,7 +1,10 @@
 import { useState, useRef, useCallback, useEffect } from 'react'
 
-const BEFORE_IMG = 'https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1200&q=80'
-const AFTER_IMG  = 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&q=80'
+import antesImg from '@/assets/antes.png'
+import depoisImg from '@/assets/depois.png'
+
+const BEFORE_IMG = antesImg
+const AFTER_IMG  = depoisImg
 
 export default function BeforeAfterSlider() {
   const [position, setPosition] = useState(50)
@@ -51,30 +54,30 @@ export default function BeforeAfterSlider() {
           onPointerDown={handlePointerDown}
           onPointerMove={handlePointerMove}
         >
-          {/* Before (base layer) */}
+          {/* After (base layer) */}
           <img
-            src={BEFORE_IMG}
-            alt="Antes da tapeçaria"
+            src={AFTER_IMG}
+            alt="Depois da tapeçaria"
             className="absolute inset-0 w-full h-full object-cover pointer-events-none"
             draggable={false}
           />
-          <span className="absolute left-4 bottom-4 bg-black/70 text-white text-sm font-bold px-3 py-1.5 rounded-lg uppercase tracking-widest z-10">
-            Antes
+          <span className="absolute right-4 bottom-4 bg-brand-orange text-white text-sm font-bold px-3 py-1.5 rounded-lg uppercase tracking-widest z-10">
+            Depois
           </span>
 
-          {/* After (clipped layer) */}
+          {/* Before (clipped layer) */}
           <div
             className="absolute inset-0 overflow-hidden pointer-events-none"
             style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
           >
             <img
-              src={AFTER_IMG}
-              alt="Depois da tapeçaria"
+              src={BEFORE_IMG}
+              alt="Antes da tapeçaria"
               className="w-full h-full object-cover"
               draggable={false}
             />
-            <span className="absolute right-4 bottom-4 bg-brand-orange text-white text-sm font-bold px-3 py-1.5 rounded-lg uppercase tracking-widest">
-              Depois
+            <span className="absolute left-4 bottom-4 bg-black/70 text-white text-sm font-bold px-3 py-1.5 rounded-lg uppercase tracking-widest">
+              Antes
             </span>
           </div>
 
