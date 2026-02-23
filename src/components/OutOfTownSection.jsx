@@ -31,10 +31,10 @@ export default function OutOfTownSection() {
             {/* Text side */}
             <div className="p-8 md:p-12 flex flex-col justify-center">
               <span className="text-brand-orange text-sm font-semibold tracking-widest uppercase mb-4">
-                🚗 Clientes do Interior
+                Clientes do Interior
               </span>
               <h2 className="text-3xl md:text-4xl font-black text-white mb-5 leading-tight">
-                Vem do interior?{' '}
+                Vem de longe?{' '}
                 <span className="text-gradient-orange">Planeje sua visita.</span>
               </h2>
               <p className="text-gray-400 leading-relaxed mb-6">
@@ -61,7 +61,7 @@ export default function OutOfTownSection() {
               </ul>
 
               <a
-                href={`https://wa.me/5565999999999?text=${waMsg}`}
+                href={`https://wa.me/556599317888?text=${waMsg}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="self-start flex items-center gap-3 bg-brand-orange hover:bg-brand-orange-dark text-white font-bold px-7 py-3.5 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/30"

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import logo from '../assets/Logo Tapeçauto.png'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -20,18 +21,16 @@ export default function Navbar() {
     <header
       className={`fixed top-8 left-0 right-0 z-40 transition-all duration-300 ${
         scrolled
-          ? 'bg-brand-black/95 backdrop-blur-md shadow-lg shadow-black/50'
+          ? 'bg-brand-black/80 backdrop-blur-md shadow-lg shadow-black/50'
           : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 bg-brand-orange rounded flex items-center justify-center font-black text-white text-sm">
-            T
-          </div>
-          <span className="text-white font-black text-xl tracking-tight">
-            Tapeç<span className="text-brand-orange">auto</span>
+          <img src={logo} alt="Tapeçauto Logo" className="w-15 h-10 object-contain" />
+          <span className="text-brand-orange font-black text-xl tracking-tight">
+            Tapeçauto
           </span>
         </a>
 
@@ -47,7 +46,7 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="https://wa.me/5565999999999?text=Olá!%20Vi%20o%20site%20e%20gostaria%20de%20agendar%20um%20diagnóstico%20gratuito."
+            href="https://wa.me/556599317888?text=Olá!%20Vi%20o%20site%20e%20gostaria%20de%20agendar%20um%20diagnóstico%20gratuito."
             target="_blank"
             rel="noopener noreferrer"
             className="bg-brand-orange hover:bg-brand-orange-dark text-white font-semibold text-sm px-5 py-2.5 rounded-lg transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/30"
@@ -88,7 +87,7 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="https://wa.me/5565999999999?text=Olá!%20Vi%20o%20site%20e%20gostaria%20de%20agendar%20um%20diagnóstico%20gratuito."
+            href="https://wa.me/556599317888?text=Olá!%20Vi%20o%20site%20e%20gostaria%20de%20agendar%20um%20diagnóstico%20gratuito."
             target="_blank"
             rel="noopener noreferrer"
             className="bg-brand-orange text-white font-semibold text-center py-3 rounded-lg"

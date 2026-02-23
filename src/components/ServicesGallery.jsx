@@ -176,7 +176,7 @@ export default function ServicesGallery() {
                   ))}
                 </div>
                 <a
-                  href={`https://wa.me/5565999999999?text=${waFeatured}`}
+                  href={`https://wa.me/556599317888?text=${waFeatured}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex-shrink-0 inline-flex items-center gap-2 bg-brand-orange hover:bg-brand-orange-dark text-white font-bold px-5 py-2.5 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/30 text-xs sm:text-sm whitespace-nowrap"
@@ -197,7 +197,7 @@ export default function ServicesGallery() {
         <p className="text-center text-gray-500 text-sm mt-10">
           Não encontrou o que precisa?{' '}
           <a
-            href={`https://wa.me/5565999999999?text=${waMsg}`}
+            href={`https://wa.me/556599317888?text=${waMsg}`}
             target="_blank"
             rel="noopener noreferrer"
             className="text-brand-orange hover:underline font-semibold"

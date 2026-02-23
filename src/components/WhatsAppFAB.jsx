@@ -5,7 +5,7 @@ export default function WhatsAppFAB() {
 
   return (
     <a
-      href={`https://wa.me/5565999999999?text=${message}`}
+      href={`https://wa.me/556599317888?text=${message}`}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Falar no WhatsApp"

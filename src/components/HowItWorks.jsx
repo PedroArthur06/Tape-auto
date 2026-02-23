@@ -88,7 +88,7 @@ export default function HowItWorks() {
             </p>
           </div>
           <a
-            href="https://wa.me/5565999999999?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20consultar%20a%20disponibilidade%20de%20agenda."
+            href="https://wa.me/556599317888?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20consultar%20a%20disponibilidade%20de%20agenda."
             target="_blank"
             rel="noopener noreferrer"
             className="flex-shrink-0 bg-brand-orange hover:bg-brand-orange-dark text-white font-bold px-7 py-3.5 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/30 text-center whitespace-nowrap"

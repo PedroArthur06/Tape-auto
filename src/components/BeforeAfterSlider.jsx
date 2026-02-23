@@ -50,7 +50,7 @@ export default function BeforeAfterSlider() {
         {/* Slider container */}
         <div
           ref={containerRef}
-          className="relative mx-auto max-w-4xl h-[420px] sm:h-[520px] rounded-2xl overflow-hidden cursor-ew-resize select-none shadow-2xl shadow-black/60 border border-brand-graphite"
+          className="relative mx-auto max-w-4xl h-[420px] sm:h-[520px] rounded-2xl overflow-hidden cursor-ew-resize select-none shadow-2xl shadow-black/60 border border-brand-graphite touch-none"
           onPointerDown={handlePointerDown}
           onPointerMove={handlePointerMove}
         >
