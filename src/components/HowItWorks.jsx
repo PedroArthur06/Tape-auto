@@ -1,3 +1,5 @@
+import { useScrollAnimation } from '@/hooks/useScrollAnimation'
+
 const steps = [
   {
     number: '01',
@@ -35,20 +37,24 @@ const steps = [
   },
 ]
 
+const staggerClasses = ['', 'delay-200', 'delay-400']
+
 export default function HowItWorks() {
+  const ref = useScrollAnimation()
+
   return (
-    <section id="como-funciona" className="py-24 bg-brand-graphite-dark relative overflow-hidden">
+    <section id="como-funciona" className="py-24 bg-brand-graphite-dark relative overflow-hidden" ref={ref}>
       {/* Background decoratives */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-brand-orange/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative">
         <div className="text-center mb-16">
-          <span className="text-brand-orange text-sm font-semibold tracking-widest uppercase">Processo</span>
-          <h2 className="text-4xl md:text-5xl font-black text-white mt-3 mb-4">
+          <span className="scroll-reveal text-brand-orange text-sm font-semibold tracking-widest uppercase inline-block">Processo</span>
+          <h2 className="scroll-reveal delay-100 text-4xl md:text-5xl font-black text-white mt-3 mb-4">
             Como funciona nosso{' '}
             <span className="text-gradient-orange">atendimento</span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="scroll-reveal delay-200 text-gray-400 text-lg max-w-2xl mx-auto">
             Transformação sob medida com hora marcada. Trabalhamos com agendamento para que seu veículo receba <strong className="text-white">atenção total e exclusiva.</strong>
           </p>
         </div>
@@ -59,7 +65,10 @@ export default function HowItWorks() {
           <div className="hidden md:block absolute top-16 left-[calc(16.67%+2rem)] right-[calc(16.67%+2rem)] h-0.5 bg-gradient-to-r from-brand-orange/20 via-brand-orange to-brand-orange/20" />
 
           {steps.map((step, i) => (
-            <div key={step.number} className="relative flex flex-col items-center text-center group">
+            <div
+              key={step.number}
+              className={`scroll-reveal ${staggerClasses[i]} relative flex flex-col items-center text-center group`}
+            >
               {/* Step number circle */}
               <div className="relative mb-6">
                 <div className="w-16 h-16 rounded-full bg-brand-orange/10 border-2 border-brand-orange flex items-center justify-center text-brand-orange transition-all duration-300 group-hover:bg-brand-orange group-hover:text-white group-hover:shadow-lg group-hover:shadow-orange-500/30">
@@ -80,7 +89,7 @@ export default function HowItWorks() {
         </div>
 
         {/* Bottom callout box */}
-        <div className="mt-16 bg-brand-graphite border border-brand-orange/20 rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="scroll-reveal mt-16 bg-brand-graphite border border-brand-orange/20 rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="max-w-xl">
             <h3 className="text-white font-bold text-xl mb-2">Transformação sob medida com hora marcada.</h3>
             <p className="text-gray-400 text-sm leading-relaxed">

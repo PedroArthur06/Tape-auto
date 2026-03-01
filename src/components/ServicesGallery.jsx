@@ -5,6 +5,7 @@ import assoalho from '@/assets/rev-assoalho.png'
 import forroPorta from '@/assets/rev-forro-porta.jpg'
 import teto from '@/assets/rev-teto.jpg'
 import costuraProgramada from '@/assets/costura-programada.png'
+import { useScrollAnimation } from '@/hooks/useScrollAnimation'
 
 const services = [
   {
@@ -61,13 +62,17 @@ const featuredService = {
   tags: ['Duas cores', 'Costura programada', 'Padrão esportivo', 'Projeto exclusivo'],
 }
 
-function ServiceCard({ service }) {
+const staggerClasses = ['', 'delay-100', 'delay-200', 'delay-300', 'delay-400', 'delay-500']
+
+function ServiceCard({ service, index }) {
   const waMsg = encodeURIComponent(
     `Olá! Vi o site e gostaria de solicitar um orçamento para o serviço de ${service.title}. Já sei que o atendimento é por agendamento e gostaria de ver as datas disponíveis.`
   )
 
   return (
-    <div className="group relative overflow-hidden rounded-xl bg-brand-graphite border border-brand-graphite-light hover:border-brand-orange/50 transition-all duration-300 hover:shadow-xl hover:shadow-orange-500/10 hover:-translate-y-1 flex flex-col">
+    <div
+      className={`scroll-reveal from-scale ${staggerClasses[index % 6]} group relative overflow-hidden rounded-xl bg-brand-graphite border border-brand-graphite-light hover:border-brand-orange/50 transition-all duration-300 hover:shadow-xl hover:shadow-orange-500/10 hover:-translate-y-1 flex flex-col`}
+    >
       {/* Image */}
       <div className="relative h-40 sm:h-40 overflow-hidden flex-shrink-0 lg:h-50">
         <img
@@ -81,7 +86,6 @@ function ServiceCard({ service }) {
       {/* Content */}
       <div className="p-3 sm:p-4 flex flex-col gap-2 flex-1">
         <h3 className="text-white font-bold text-sm sm:text-base leading-tight">{service.title}</h3>
-        {/* Descrição oculta no mobile para manter o card compacto */}
         <p className="hidden sm:block text-gray-400 text-xs leading-relaxed flex-1">{service.description}</p>
         <div className="flex flex-wrap gap-1 sm:gap-1.5 sm:pt-2 sm:border-t sm:border-brand-graphite-light">
           {service.tags.map((tag) => (
@@ -102,6 +106,8 @@ function ServiceCard({ service }) {
 }
 
 export default function ServicesGallery() {
+  const ref = useScrollAnimation()
+
   const waMsg = encodeURIComponent(
     'Olá! Vi o site e gostaria de solicitar um orçamento. Já sei que o atendimento é por agendamento e gostaria de ver as datas disponíveis para o serviço de '
   )
@@ -110,46 +116,46 @@ export default function ServicesGallery() {
   )
 
   return (
-    <section id="servicos" className="py-24 bg-brand-graphite-dark">
+    <section id="servicos" className="py-24 bg-brand-graphite-dark" ref={ref}>
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-14">
-          <span className="text-brand-orange text-sm font-semibold tracking-widest uppercase">
+          <span className="scroll-reveal text-brand-orange text-sm font-semibold tracking-widest uppercase inline-block">
             O que fazemos
           </span>
-          <h2 className="text-4xl md:text-5xl font-black text-white mt-3 mb-4">
+          <h2 className="scroll-reveal delay-100 text-4xl md:text-5xl font-black text-white mt-3 mb-4">
             Serviços que <span className="text-gradient-orange">Transformam</span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="scroll-reveal delay-200 text-gray-400 text-lg max-w-2xl mx-auto">
             Cada serviço é executado por profissionais especializados, com materiais de primeira
             linha e prazo rigoroso.
           </p>
         </div>
 
-        {/* Grid: 2 cols mobile / 3 cols desktop — 6 serviços */}
+        {/* Grid: 2 cols mobile / 3 cols desktop */}
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-3 mb-4">
-          {services.map((s) => (
-            <ServiceCard key={s.id} service={s} />
+          {services.map((s, i) => (
+            <ServiceCard key={s.id} service={s} index={i} />
           ))}
         </div>
 
-        <div className="group relative overflow-hidden rounded-2xl border border-brand-orange/30 hover:border-brand-orange/60 transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/15 bg-brand-graphite">
+        {/* Featured card */}
+        <div className="scroll-reveal group relative overflow-hidden rounded-2xl border border-brand-orange/30 hover:border-brand-orange/60 transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/15 bg-brand-graphite">
           <div className="flex flex-col md:flex-row h-auto">
-            {/* Image — left on desktop, top on mobile */}
+            {/* Image */}
             <div className="relative md:w-1/3 h-56 sm:h-64 md:h-auto overflow-hidden flex-shrink-0">
               <img
                 src={featuredService.image}
                 alt={featuredService.title}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
-
               {/* Premium badge */}
               <div className="absolute top-3 left-3 flex items-center gap-2 bg-brand-orange px-2.5 py-1 rounded-full">
                 <span className="text-white text-xs font-black uppercase tracking-wider">✦ Premium</span>
               </div>
             </div>
 
-            {/* Content — right on desktop, below on mobile */}
+            {/* Content */}
             <div className="flex flex-col justify-center p-4 sm:p-5 md:px-10 md:py-4 gap-3 md:gap-4 flex-1">
               <div>
                 <span className="text-brand-orange text-xs font-semibold uppercase tracking-widest">
@@ -194,7 +200,7 @@ export default function ServicesGallery() {
         </div>
 
         {/* Footer hint */}
-        <p className="text-center text-gray-500 text-sm mt-10">
+        <p className="scroll-reveal text-center text-gray-500 text-sm mt-10">
           Não encontrou o que precisa?{' '}
           <a
             href={`https://wa.me/556599317888?text=${waMsg}`}

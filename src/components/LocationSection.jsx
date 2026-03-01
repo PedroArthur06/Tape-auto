@@ -1,20 +1,23 @@
+import { useScrollAnimation } from '@/hooks/useScrollAnimation'
+
 export default function LocationSection() {
+  const ref = useScrollAnimation()
   return (
-    <section id="localizacao" className="py-24 bg-brand-graphite-dark">
+    <section id="localizacao" className="py-24 bg-brand-graphite-dark" ref={ref}>
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-14">
-          <span className="text-brand-orange text-sm font-semibold tracking-widest uppercase">Onde estamos</span>
-          <h2 className="text-4xl md:text-5xl font-black text-white mt-3 mb-4">
+          <span className="scroll-reveal text-brand-orange text-sm font-semibold tracking-widest uppercase inline-block">Onde estamos</span>
+          <h2 className="scroll-reveal delay-100 text-4xl md:text-5xl font-black text-white mt-3 mb-4">
             Fácil de <span className="text-gradient-orange">Encontrar</span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-xl mx-auto">
+          <p className="scroll-reveal delay-200 text-gray-400 text-lg max-w-xl mx-auto">
             Localizada na Rodovia Palmiro Paes de Barros, de fácil acesso para quem vem de qualquer região.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
           {/* Map */}
-          <div className="lg:col-span-3 rounded-2xl overflow-hidden h-80 lg:h-[420px] border border-brand-graphite shadow-2xl shadow-black/50">
+          <div className="scroll-reveal from-left lg:col-span-3 rounded-2xl overflow-hidden h-80 lg:h-[420px] border border-brand-graphite shadow-2xl shadow-black/50">
             <iframe
               title="Localização Tapeçauto"
               src="https://maps.google.com/maps?q=Rodovia+Palmiro+Paes+de+Barros,+Cuiab%C3%A1,+MT&t=&z=15&ie=UTF8&iwloc=&output=embed"
@@ -28,7 +31,7 @@ export default function LocationSection() {
           </div>
 
           {/* Info Panel */}
-          <div className="lg:col-span-2 flex flex-col gap-6">
+          <div className="scroll-reveal delay-200 from-right lg:col-span-2 flex flex-col gap-6">
             {/* Address */}
             <div className="bg-brand-graphite rounded-2xl p-6 border border-brand-graphite-light">
               <div className="flex items-start gap-4">

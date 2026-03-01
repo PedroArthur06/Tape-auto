@@ -2,6 +2,7 @@ import Navbar from './components/Navbar'
 import HeroSection from './components/HeroSection'
 import ServicesGallery from './components/ServicesGallery'
 import BeforeAfterSlider from './components/BeforeAfterSlider'
+import TestimonialsSection from './components/TestimonialsSection'
 import HowItWorks from './components/HowItWorks'
 import OutOfTownSection from './components/OutOfTownSection'
 import LocationSection from './components/LocationSection'
@@ -15,6 +16,7 @@ function App() {
       <HeroSection />
       <ServicesGallery />
       <BeforeAfterSlider />
+      <TestimonialsSection />
       <HowItWorks />
       <OutOfTownSection />
       <LocationSection />

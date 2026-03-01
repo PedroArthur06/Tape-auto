@@ -39,4 +39,54 @@
     transform: translateY(-6px);
     box-shadow: 0 20px 40px rgba(249, 115, 22, 0.15);
   }
+
+  /* ── Scroll-reveal animations ─────────────────────────────── */
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition:
+      opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .scroll-reveal.from-left {
+    transform: translateX(-40px);
+  }
+
+  .scroll-reveal.from-right {
+    transform: translateX(40px);
+  }
+
+  .scroll-reveal.from-scale {
+    transform: scale(0.92) translateY(16px);
+  }
+
+  .scroll-reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* stagger helpers */
+  .scroll-reveal.delay-100 {
+    transition-delay: 0.1s;
+  }
+  .scroll-reveal.delay-200 {
+    transition-delay: 0.2s;
+  }
+  .scroll-reveal.delay-300 {
+    transition-delay: 0.3s;
+  }
+  .scroll-reveal.delay-400 {
+    transition-delay: 0.4s;
+  }
+  .scroll-reveal.delay-500 {
+    transition-delay: 0.5s;
+  }
+
+  /* ── Navbar glow line ─────────────────────────────────────── */
+  .navbar-glow {
+    box-shadow:
+      0 1px 0 0 rgba(249, 115, 22, 0.25),
+      0 8px 32px 0 rgba(0, 0, 0, 0.6);
+  }
 }

@@ -1,4 +1,5 @@
 import heroBg from '@/assets/img-hero.png'
+import CountUp from '@/components/CountUp'
 
 export default function HeroSection() {
   const waMessage = encodeURIComponent(
@@ -64,12 +65,21 @@ export default function HeroSection() {
         {/* Stats bar */}
         <div className="mt-16 flex flex-wrap gap-8 animate-fade-in" style={{ animationDelay: '0.5s' }}>
           {[
-            { value: '30+', label: 'Anos de experiência' },
-            { value: '5.000+', label: 'Veículos transformados' },
-            { value: '100%', label: 'Acabamento de fábrica' },
+            { from: 0, to: 30, suffix: '+', label: 'Anos de experiência' },
+            { from: 0, to: 5000, suffix: '+', label: 'Veículos transformados', separator: '.' },
+            { from: 0, to: 100, suffix: '%', label: 'Acabamento de fábrica' },
           ].map((s) => (
-            <div key={s.value} className="flex flex-col">
-              <span className="text-brand-orange text-3xl font-black">{s.value}</span>
+            <div key={s.label} className="flex flex-col">
+              <span className="text-brand-orange text-3xl font-black flex items-baseline gap-0.5">
+                <CountUp
+                  from={s.from}
+                  to={s.to}
+                  duration={2}
+                  separator={s.separator || ''}
+                  className="tabular-nums"
+                />
+                <span>{s.suffix}</span>
+              </span>
               <span className="text-gray-400 text-sm mt-0.5">{s.label}</span>
             </div>
           ))}
