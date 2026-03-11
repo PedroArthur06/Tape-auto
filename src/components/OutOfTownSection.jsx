@@ -21,6 +21,7 @@ export default function OutOfTownSection() {
               <img
                 src={vemDeFora}
                 alt="Tapeçauto atende clientes de todo o MT"
+                loading="lazy"
                 className="w-full h-full object-cover"
               />
 
